@@ -1,12 +1,38 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+<!--    <router-view v-if="$route.path === '/Login' || $route.path === '/Register'"/>-->
+    <el-container>
+      <el-header>
+        <Headerinformation></Headerinformation>
+      </el-header>
+      <el-container>
+        <el-aside>
+          <Sidebar></Sidebar>
+        </el-aside>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
+
+<script>
+import Home from "./views/Home";
+// import Login from "./views/Login";
+import Headerinformation from "@/components/Headerinformation.vue";
+import Sidebar from "@/components/Sidebar.vue";
+
+export default {
+  name: "App",
+  components: {
+    Home,
+    // Login,
+    Headerinformation,
+    Sidebar
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
@@ -16,14 +42,19 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.el-header, .el-footer {
+  background-color: #2e5e85;
+}
+.el-aside {
+  text-align: left;
+  height: 700px;
+  width: 200px !important;
+  background-color: #344054;
+}
+.el-main {
+  background-color: #e9eef3;
+}
+body > .el-container {
+  margin-bottom: 40px;
 }
 </style>

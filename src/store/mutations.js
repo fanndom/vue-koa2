@@ -1,0 +1,6 @@
+import {GET_CITY} from './mutation-types'
+export default {
+  [GET_CITY](state,data) {
+    state.citys = data
+  }
+}

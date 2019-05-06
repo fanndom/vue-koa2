@@ -14,13 +14,46 @@ export default new Router({
       component: Home
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      path: "/Pagingform",
+      name: "pagingform",
       component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
+        import(/* webpackChunkName: "about" */ "./views/Pagingform.vue")
+    },
+    {
+      path: "/Login",
+      name: "login",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Login.vue")
+    },
+    {
+      path: "/Tabpage",
+      name: "tabpage",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Tabpage.vue")
+    },
+    {
+      path: "/Pictureupload",
+      name: "pictureupload",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Pictureupload.vue")
+    },
+    {
+      path: "/Publisharticles",
+      name: "publisharticles",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Publisharticles.vue")
+    },
+    {
+      path: "/Exportexcel",
+      name: "exportexcel",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Exportexcel.vue")
+    },
+    {
+      path: "/Exitsystem",
+      name: "exitsystem",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Exitsystem.vue")
     }
   ]
 });
