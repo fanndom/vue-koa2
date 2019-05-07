@@ -1,49 +1,54 @@
 <template>
-  <div class="card">
-    <div class="new-visits">
-      <div class="content-left">
-        <img src="../assets/aa.svg" alt="">
-      </div>
-      <div class="content-right">
-        <p>New Visits</p>
-        <countTo :startVal='startVal' :endVal='endVal' :duration='duration'></countTo>
-      </div>
+  <div>
+    <div>
+      <Statusbar></Statusbar>
     </div>
-    <div class="new-visits">
-      <div class="content-left">
-        <img src="../assets/aa.svg" alt="">
+    <el-card class="box-card new-box-card" style="margin-top:20px;">
+      <div class="text item">
+        <Linechart></Linechart>
       </div>
-      <div class="content-right">
-        123
-      </div>
+    </el-card>
+    <div class="card" style="margin-top:20px;">
+      <Radarchart style="width:29%;"></Radarchart>
+      <Annularchart style="width:29%;"></Annularchart>
+      <Barchart style="width:29%;"></Barchart>
     </div>
-    <div class="new-visits">
-      <div class="content-left">
-        <img src="../assets/aa.svg" alt="">
-      </div>
-      <div class="content-right">
-        123
-      </div>
-    </div>
-    <div class="new-visits">
-      <div class="content-left">
-        <img src="../assets/aa.svg" alt="">
-      </div>
-      <div class="content-right">
-        123
-      </div>
+    <div class="card" style="margin-top:20px;">
+      <el-card class="box-card new-box-card" style="width:48%;">
+        <Table></Table>
+      </el-card>
+      <el-card class="box-card new-box-card" style="width:25%;">
+        <Todolist></Todolist>
+      </el-card>
+      <el-card class="box-card new-box-card" style="width:25%;">
+        <Progressbar></Progressbar>
+      </el-card>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from "@/components/Headerinformation.vue";
+import Statusbar from "@/components/home/Statusbar.vue";
+import Linechart from "@/components/home/Linechart.vue";
+import Radarchart from "@/components/home/Radarchart.vue";
+import Annularchart from "@/components/home/Annularchart.vue";
+import Barchart from "@/components/home/Barchart.vue";
+import Table from "@/components/home/Table.vue";
+import Todolist from "@/components/home/Todolist.vue";
+import Progressbar from "@/components/home/Progressbar.vue";
 
 export default {
   name: "home",
   components: {
-    // HelloWorld
+    Statusbar,
+    Linechart,
+    Radarchart,
+    Annularchart,
+    Barchart,
+    Table,
+    Todolist,
+    Progressbar
   }
 };
 </script>
@@ -51,19 +56,5 @@ export default {
 .card {
   display: flex;
   justify-content: space-between;
-}
-.card>div {
-  width: 22%;
-  box-shadow: 0 0 8px #bec3c7;
-  display: flex;
-  padding: 16px 10px;
-  justify-content: space-between;
-}
-.content-left {
-  width: 48px;
-  height: 48px;
-  img {
-    width: 100%;
-  }
 }
 </style>

@@ -42,14 +42,26 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.el-header, .el-footer {
-  background-color: #2e5e85;
+.el-header {
+  padding-left: 0 !important;
+  div {
+    background-color: #2e5e85;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 60px !important;
+    /*height: 100%;*/
+  }
 }
 .el-aside {
   text-align: left;
-  height: 700px;
   width: 200px !important;
   background-color: #344054;
+  div {
+    position: fixed;
+    width: 201px;
+    height: 100%;
+  }
 }
 .el-main {
   background-color: #e9eef3;

@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="all">
     <el-row class="tac">
       <el-col :span="24">
         <el-menu
@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       navList: {
-        home: "home",
+        home: "Sidebar",
         pagingform: "pagingform",
         tabpage: "tabpage",
         pictureupload: "pictureupload",

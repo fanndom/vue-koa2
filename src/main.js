@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store/index";
 import ElementUI from "element-ui";
-import 'element-ui/lib/theme-chalk/index.css'
+import "element-ui/lib/theme-chalk/index.css";
 import moment from "moment";
 import http from "./http";
 import axios from "axios";
@@ -27,3 +27,5 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount("#app");
+
+
