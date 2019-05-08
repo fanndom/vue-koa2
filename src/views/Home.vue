@@ -17,9 +17,7 @@
       <el-card class="box-card new-box-card" style="width:48%;">
         <Table></Table>
       </el-card>
-      <el-card class="box-card new-box-card" style="width:25%;">
-        <Todolist></Todolist>
-      </el-card>
+      <Todolist style="width:25%;"></Todolist>
       <el-card class="box-card new-box-card" style="width:25%;">
         <Progressbar></Progressbar>
       </el-card>
