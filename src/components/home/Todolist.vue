@@ -79,6 +79,8 @@ export default {
       this.todoList.splice(index, 1)
     },
     chackActive(index) {
+      // this.todoList[index].complete = true
+      // console.log(this.todoList[index].complete)
       // this.Active = this.todoList.filter(item => {
       //   return item.complete
       // })
@@ -87,7 +89,7 @@ export default {
       // })
       // this.Active.push(this.todoList[index])
       // this.inComplete.splice(this.Active.length-1,1)
-      // console.log(this.Active);
+      // console.log(this.Active)
       // console.log(this.inComplete);
     }
   },
@@ -105,6 +107,6 @@ export default {
   width: 100%;
   height: 1px;
   background: #d8d8d8;
-    margin: 16px 0;
+  margin: 16px 0;
 }
 </style>
