@@ -7,11 +7,14 @@ import "element-ui/lib/theme-chalk/index.css";
 import moment from "moment";
 import http from "./http";
 import axios from "axios";
+import mavonEditor from 'mavon-editor';
+import 'mavon-editor/dist/css/index.css';
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.prototype.$moment = moment;
 Vue.prototype.$axios = http;
+Vue.use(mavonEditor);
 
 axios.defaults.timeout = 10000;
 axios.defaults.headers.post["Content-Type"] = 'application/x-www-form-urlencoded;charset=UTF-8'

@@ -47,7 +47,7 @@
         </el-table-column>
       </el-table>
     </div>
-    <div>
+    <div class="paging">
       <Paging :selectList="selectList" @sizeChange="handleSizeChange" @currentChange="handleCurrentChange"></Paging>
     </div>
     <div>
@@ -108,9 +108,9 @@ export default {
     },
     handlemodify() {
       this.dialogFormVisible = false
-      this.tableData[this.index].NAME = this.tradeName
-      this.tableData[this.index].ORI_PRICE = this.originalPrice
-      this.tableData[this.index].PRESENT_PRICE = this.presentPrice
+      this.tableData[this.index + (this.currentChange-1) * this.sizeChange].NAME = this.tradeName
+      this.tableData[this.index + (this.currentChange-1) * this.sizeChange].ORI_PRICE = this.originalPrice
+      this.tableData[this.index + (this.currentChange-1) * this.sizeChange].PRESENT_PRICE = this.presentPrice
     },
     handleEdit(index, row) {
       this.dialogFormVisible = true
@@ -155,6 +155,9 @@ export default {
   width: 240px;
 }
 .about {
+  text-align: left;
+}
+.paging {
   text-align: left;
 }
 </style>
