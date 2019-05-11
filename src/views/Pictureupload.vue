@@ -1,40 +1,42 @@
 <template>
   <div class="about">
-    <h1>图片上传</h1>
-    <el-upload
-      class="upload-demo"
-      drag
-      action="https://jsonplaceholder.typicode.com/posts/"
-      multiple>
-      <i class="el-icon-upload"></i>
-      <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-      <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
-    </el-upload>
-    <div>
-      <el-button size="small" @click="toggleShow" type="primary">裁剪上传</el-button>
-      <my-upload field="file"
-         v-model="show"
-         :width="300"
-         :height="300"
-         url="api/upload"
-         :params="params"
-         :headers="headers"
-         img-format="png">
-      </my-upload>
-      <img :src="imgDataUrl">
-    </div>
-
+    <el-card class="box-card">
+      <div class="title">
+        <span>支持拖拽</span>
+      </div>
+      <el-card class="box-card box-card-word">
+        <div>
+          <span>Element UI自带上传组件</span>
+        </div>
+      </el-card>
+      <div>
+        <Drag></Drag>
+      </div>
+      <div>
+        <div class="title title1">
+          <span>支持裁剪</span>
+        </div>
+        <el-card class="box-card box-card-word">
+          <div>
+            <span>vue-image-crop-upload</span>
+          </div>
+        </el-card>
+        <Tailoring :show="show" :imgDataUrl="imgDataUrl" @toggleShow="toggleShow"></Tailoring>
+      </div>
+    </el-card>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import myUpload from 'vue-image-crop-upload';
+import Drag from "@/components/pictureupload/Drag.vue";
+import Tailoring from "@/components/pictureupload/Tailoring.vue";
 
 export default {
   name: "Pictureupload",
   components: {
-    'my-upload': myUpload
+    Drag,
+    Tailoring
   },
   data() {
     return {
@@ -42,9 +44,30 @@ export default {
       imgDataUrl: ''
     }
   },
+  methods: {
+    toggleShow() {
+      this.show = !this.show
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss">
-
+.box-card {
+  text-align: left;
+}
+.title {
+  font-size: 22px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  color: #585858;
+}
+.box-card-word {
+  background: #e9eef3;
+  box-shadow: none;
+  margin-bottom: 20px;
+}
+.title1 {
+  margin-top: 20px;
+}
 </style>

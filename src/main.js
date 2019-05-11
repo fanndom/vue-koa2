@@ -16,7 +16,7 @@ Vue.prototype.$moment = moment;
 Vue.prototype.$axios = http;
 Vue.use(mavonEditor);
 
-axios.defaults.timeout = 10000;
+// axios.defaults.timeout = 10000;
 axios.defaults.headers.post["Content-Type"] = 'application/x-www-form-urlencoded;charset=UTF-8'
 axios.interceptors.response.use(
   response => {

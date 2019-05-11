@@ -5,9 +5,12 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
+const mongoose = require('mongoose')
 
 const index = require('./routes/index')
 const users = require('./routes/users')
+const work = require('./routes/work')
+
 
 // error handler
 onerror(app)
@@ -35,10 +38,18 @@ app.use(async (ctx, next) => {
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
+app.use(work.routes(), work.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
   console.error('server error', err, ctx)
 });
 
+mongoose.connect('mongodb://localhost:27017/fan', { useNewUrlParser: true }, err => {
+  if (err) {
+    console.log('Connection Error:' + err)
+  } else {
+    console.log('数据库连接成功!')
+  }
+})
 module.exports = app
